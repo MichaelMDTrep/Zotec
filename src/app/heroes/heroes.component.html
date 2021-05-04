@@ -1,0 +1,36 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!-- Example of angular's event binding syntax
+  THe parentheses around click tell Angular to listen for the <li>
+    element's click event -->
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+  <!-- Angular adds the selected CSS class. When the two heros are different, Angular removes the class 
+  
+  You used *ngFor to display a  lsit
+*ngIf to conditionally include or exclude a block of HTML
+toggle a CSS style class with a class binding-->
+</ul>
+
+<div *ngIf="selectedHero">
+
+  <!-- ngif removes the hero detail from the DOM.
+  puts the hero detail into the DOM 
+
+which is Document object Model-->
+
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+      <!-- "[hero]=selectedHero is an Angular property binding
+        One way dataing binding from the selectedHero property of the Heroes Component
+        to the hero property. Maps to the hero property of the HeroDetailComponent" -->
+  </div>
+
+</div>

@@ -1,5 +1,13 @@
 <h1>{{title}}</h1>
+<!-- Angular's interpolation binding syntax. This presents the component's title property value inside the HTML header tag -->
 <app-heroes></app-heroes>
+<nav>
+    <a routerLink="/dashboard">dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+  </nav>
 
+  <!-- triggers navigation to the HeroesCompoentn -->
+<router-outlet></router-outlet>
+<app-messages></app-messages>
 <!-- {{title}} takes data from the parent component
 @output takes data flow from the child to the parent -->

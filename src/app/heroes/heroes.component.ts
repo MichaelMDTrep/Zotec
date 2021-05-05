@@ -17,7 +17,7 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
   }
-
+// lifecycle hook that angular calls shortly after creating a component. it's a good place to puthinitialization logic
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
